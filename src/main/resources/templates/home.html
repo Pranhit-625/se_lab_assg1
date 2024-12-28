@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>CRUD Application</title>
+</head>
+<body>
+    <h1>CRUD Application - User Form</h1>
+
+    <!-- Form to Add a New User -->
+    <form th:action="@{/users/add}" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="text" id="phoneNumber" name="phoneNumber" required><br><br>
+
+        <button type="submit">Add User</button>
+    </form>
+</body>
+</html>
