@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User List</title>
+</head>
+<body>
+    <h1>Users</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="user, indexStat : ${users}">
+                <td th:text="${user.name}"></td>
+                <td>
+                    <a th:href="@{/users/update/{index}(index=${indexStat.index})}">Update</a> |
+                    <a th:href="@{/users/delete/{index}(index=${indexStat.index})}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/users/create">Create User</a>
+</body>
+</html>
